@@ -1,0 +1,70 @@
+html, body {
+    font-family: Trebuchet MS, Trebuchet, Arial, sans-serif;
+}
+
+#menu{
+    border:3px solid blue;
+    text-align: center;
+    width:30%;
+    position: absolute;
+    top: 30%;
+    left: 35%;
+}
+
+#difficulty{
+    margin-top: 5%;
+}
+
+#difficulty button{
+    width: 20%;
+}
+
+#highscores-btn{
+    width: 70%;
+    margin: 3% auto;
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+    #difficulty button{
+        width: 25%;
+    }
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+    #menu {
+        width: 40%;
+        position: absolute;
+        left: 30%;
+    }
+    #difficulty button{
+        width: 25%;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+    #menu {
+        width: 60%;
+        position: absolute;
+        left: 20%;
+    }
+
+}
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+    #menu{
+        width: 80%;
+        position: absolute;
+        top: 10%;
+        left: 10%;
+    }
+
+    #highscores-btn, #difficulty button{
+        display: block;
+        margin: 10px auto;
+        width: 60%;
+    }
+}
