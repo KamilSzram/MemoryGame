@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Memory Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="app.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header><h2>Memory Game</h2></header>
+    <nav>
+        <div class="statistics">
+            <div id="result">
+                <p>Score: <span id="score">0</span></p>
+            </div>
+
+            <a href="game.html"><div id="play-again-btn" class="button">Play Again</div></a>
+            <a href="index.html"><div id="menu-btn" class="button">Menu</div></a>
+            <div id="moves">
+                <p>Moves: <span id="counter">0</span></p>
+            </div>
+        </div>
+
+    </nav>
+    <div class="board">
+
+    </div>
+</body>
+
+<script>
+    $(document).ready(function() {
+        Game.init();
+        Game.createGame();
+    });
+</script>
+</html>

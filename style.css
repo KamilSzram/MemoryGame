@@ -1,7 +1,9 @@
 html, body {
     font-family: Trebuchet MS, Trebuchet, Arial, sans-serif;
+    font-size: 14px;
 }
 
+/* Menu */
 #menu{
     border:3px solid blue;
     text-align: center;
@@ -15,18 +17,72 @@ html, body {
     margin-top: 5%;
 }
 
-#difficulty button{
+#difficulty > a div.btn{
     width: 20%;
 }
 
-#highscores-btn{
+#highscores{
     width: 70%;
     margin: 3% auto;
 }
 
+/* Game */
+.board, nav{
+    width:90%;
+    margin: 0 auto;
+}
+
+.statistics{
+    width:45%;
+    margin: 2% auto;
+}
+
+#play-again-btn, #menu-btn{
+    width: 25%;
+    padding: 8px;
+    border-radius: 3px;
+    background-color: #00C853;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+header{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 5%;
+}
+
+.board > div.row{
+    width:45%;
+    margin: 0 auto;
+}
+#moves, #result {
+    width: 15%;
+    display: inline-block;
+}
+
+#moves {
+    text-align: right;
+}
+
+.card, .card-checked{
+    display: inline-block;
+    margin: 1%;
+    border: 1px solid black;
+    box-shadow: 3px 3px 5px grey;
+    cursor: pointer;
+    width: 75px;
+    height: 112px;
+
+}
+
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
-    #difficulty button{
+    #difficulty > a div.btn{
         width: 25%;
     }
 
@@ -39,7 +95,7 @@ html, body {
         position: absolute;
         left: 30%;
     }
-    #difficulty button{
+    #difficulty > a div.btn{
         width: 25%;
     }
 }
@@ -52,6 +108,7 @@ html, body {
         left: 20%;
     }
 
+
 }
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
@@ -62,7 +119,7 @@ html, body {
         left: 10%;
     }
 
-    #highscores-btn, #difficulty button{
+    #highscores, #difficulty > a div.btn{
         display: block;
         margin: 10px auto;
         width: 60%;
