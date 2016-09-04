@@ -24,8 +24,7 @@ var Menu = (function(){
 
 
 var Game = (function(){
-    var images = ["cards/card.png", "cards/card1.png", "cards/card2.png", "cards/card3.png", "cards/card4.png", "cards/card5.png",
-        "cards/card6.png","cards/card7.png", "cards/card8.png", "cards/card9.png", "cards/card10.png", "cards/card11.png","cards/card12.png"];
+    var images = ["img/cards/card.png", "img/cards/card1.png", "img/cards/card2.png", "img/cards/card3.png", "img/cards/card4.png", "img/cards/card5.png", "img/cards/card6.png","img/cards/card7.png", "img/cards/card8.png", "img/cards/card9.png", "img/cards/card10.png", "img/cards/card11.png","img/cards/card12.png"];
     var pairsToFind = 0;
     $img1 = null;
     $img2 = null;
@@ -84,7 +83,7 @@ var Game = (function(){
             }
             html += '</div>';
         }
-        $(".board").append(html);
+        $(".wrapper").append(html);
         $(".card").on('click', flipCard);
     };
 

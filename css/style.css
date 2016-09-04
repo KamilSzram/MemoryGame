@@ -1,0 +1,232 @@
+html, body {
+    font-family: Trebuchet MS, Trebuchet, Arial, sans-serif;
+    font-size: 14px;
+}
+
+
+/***************************/
+/********* MENU ***********/
+/**************************/
+
+#menu{
+    border:3px solid blue;
+    text-align: center;
+    width:30%;
+    position: absolute;
+    top: 30%;
+    left: 35%;
+}
+
+#difficulty{
+    margin-top: 5%;
+}
+
+#difficulty > a div.btn{
+    width: 20%;
+}
+
+#highscores{
+    width: 70%;
+    margin: 3% auto;
+}
+
+
+
+/***************************/
+/********* GAME ***********/
+/**************************/
+
+.board, nav{
+    width:90%;
+    margin: 0 auto;
+}
+
+.statistics{
+    /* 75px card width and 15px of left margin times 6(number of cards in row) and 10px extra */
+    width:calc((90px*6) + 10px );
+    margin: 2% auto;
+}
+
+#buttons{
+    width: 65%;
+    display: inline-block;
+}
+
+#play-again-btn, #menu-btn{
+    width: 40%;
+    padding: 8px;
+    border-radius: 3px;
+    background-color: #00C853;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+header{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 5%;
+}
+
+#moves, #result {
+    width: 15%;
+    display: inline-block;
+}
+
+#moves{
+    text-align: right;
+}
+
+#result{
+    margin-left: 15px;
+}
+
+#moves, #menu-btn{
+    float: right;
+}
+
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card, .card-checked {
+    margin-left: 15px;
+    margin-top: 10px;
+    width: 75px;
+    height: 112px;
+    box-shadow: 3px 3px 5px grey;
+    cursor: pointer;
+    border: 1px solid black;
+    display: inline-block;
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+    /* Menu */
+    #difficulty > a div.btn{
+        width: 25%;
+    }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+    /* Menu */
+    #menu {
+        width: 40%;
+        position: absolute;
+        left: 30%;
+    }
+    #difficulty > a div.btn{
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    /* Menu */
+    #menu {
+        width: 60%;
+        position: absolute;
+        left: 20%;
+    }
+
+    #difficulty > a div.btn{
+        width: 25%;
+    }
+
+
+    /* Game */
+    .wrapper{
+        flex-direction: row;
+    }
+
+    .wrapper > div.row{
+        width: 20%;
+    }
+
+    .statistics{
+        width:80%;
+    }
+
+    #buttons{
+        width: 100%;
+        display: block;
+    }
+
+    #play-again-btn, #menu-btn{
+        width: 35%;
+    }
+
+    #menu-btn{
+        float: right;
+        margin-right: 0px;
+    }
+
+    #moves, #result {
+        width:30%;
+    }
+    #play-again-btn{
+        margin-left: 15px;
+    }
+
+}
+
+@media screen and (max-width: 520px) {
+    /* Menu */
+    #menu{
+        width: 80%;
+        position: absolute;
+        top: 10%;
+        left: 10%;
+    }
+
+    #highscores, #difficulty > a div.btn{
+        display: block;
+        margin: 10px auto;
+        width: 60%;
+    }
+
+    /* Game */
+    .wrapper > div.row{
+        width: 30%;
+    }
+
+    .statistics{
+        width:100%;
+    }
+
+
+    #play-again-btn, #result{
+        margin-left: 0px;
+    }
+
+    .card, .card-checked{
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    /* Game */
+    .wrapper > div.row{
+        width: 33%;
+    }
+
+    nav{
+        width:100%;
+    }
+
+    .board{
+        width: 100%;
+    }
+
+    .card, .card-checked{
+        margin-left: 5px;
+    }
+
+}
