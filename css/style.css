@@ -107,6 +107,14 @@ header{
     display: inline-block;
 }
 
+/***************************/
+/******* HIGHSCORES *******/
+/**************************/
+
+.table{
+    margin-top:10%;
+}
+
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
     /* Menu */

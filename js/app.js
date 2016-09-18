@@ -22,12 +22,48 @@ var Menu = (function(){
     };
 })();
 
+var Highscores = (function(){
+    var results = [];
+
+    var load = function(){
+        if (localStorage.getItem("results") !== null)
+            results = JSON.parse(localStorage.getItem("results"));
+
+        var html = '';
+        for(var i = 0; i<results.length; i++){
+            html += '<tr><td>' + (i+1) + '</td><td>' + results[i].name + '</td><td>' + results[i].difficulty + '</td><td>' + results[i].points + '</td></tr>'
+        }
+        $('.table tbody').append(html);
+    };
+
+    var save = function(name, points) {
+        var newResult = {
+            name : name,
+            difficulty : sessionStorage.getItem('difficulty'),
+            points : points
+        };
+
+        if (localStorage.getItem("results") !== null)
+            results = JSON.parse(localStorage["results"]);
+
+        results.push(newResult);
+        results.sort(function(a,b){return b.points - a.points});
+        localStorage["results"] = JSON.stringify(results);
+    };
+
+    return{
+        load: load,
+        save: save
+    };
+})();
+
 
 var Game = (function(){
     var images = ["img/cards/card.png", "img/cards/card1.png", "img/cards/card2.png", "img/cards/card3.png", "img/cards/card4.png", "img/cards/card5.png", "img/cards/card6.png","img/cards/card7.png", "img/cards/card8.png", "img/cards/card9.png", "img/cards/card10.png", "img/cards/card11.png","img/cards/card12.png"];
     var pairsToFind = 0;
     $img1 = null;
     $img2 = null;
+    var isFirstCheck = true;
 
     var init = function(){
         $(".button").hover(function(){
@@ -115,7 +151,11 @@ var Game = (function(){
             }
         }
         else{
-            addScore(-5);
+            if(!isFirstCheck)
+                addScore(-5);
+            else
+                isFirstCheck = false;
+
             setTimeout( function(){
                 toggleCards();
             }, 500 );
@@ -144,31 +184,11 @@ var Game = (function(){
     var show_prompt = function() {
         name = prompt('Please enter your name');
         if (name !== null && name !== "") {
-            saveScore();
+            var points = $("#score").text();
+            Highscores.save(name, points);
         }
     };
 
-    var saveScore = function() {
-        var players = [];
-        var level = [];
-        var points = [];
-
-        if (localStorage.getItem("players") !== null)
-            players = JSON.parse(localStorage["players"]);
-        if (localStorage.getItem("level") !== null)
-            level = JSON.parse(localStorage["level"]);
-        if (localStorage.getItem("points") !== null)
-            points = JSON.parse(localStorage["points"]);
-
-        var score = parseInt($("#score").text());
-
-        players.push(name);
-        level.push(sessionStorage.getItem('difficulty'));
-        points.push(score);
-        localStorage["players"] = JSON.stringify(players);
-        localStorage["level"] = JSON.stringify(level);
-        localStorage["points"] = JSON.stringify(points);
-    };
 
     return{
         init: init,
